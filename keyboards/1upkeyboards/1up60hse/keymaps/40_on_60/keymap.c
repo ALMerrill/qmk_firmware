@@ -42,9 +42,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------------------------------------.
    * |     |     |     |     |     |     |     |     |     |     |     |     |     |           |
    * |-----------------------------------------------------------------------------------------+
-   * |    ~    |  !  |  @  |  #  |  $  |  %  |  ^  |  &  |  *  |  (  |  )  | Del |     |       |
+   * |    ~    |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  | Del |     |       |
    * |-----------------------------------------------------------------------------------------+
-   * |   EscC   |Mute |VolD |VolU |     |     |     | -_  | =+  | [{  | ]}  | FREE  |          |
+   * |   EscC   |Mute |VolD |VolU |     |     |     | -_  | =+  | [{  | ]}  | PIPE  |          |
    * |-----------------------------------------------------------------------------------------+
    * |   Shift   |PrvSng|PlPs|NxSng|     |     |     |    |     |     |   \ |  |     EntS      |
    * |-----------------------------------------------------------------------------------------+
@@ -53,19 +53,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [1] = LAYOUT_60_ansi(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL, KC_TRNS, KC_TRNS,
-    LCTL_T(KC_ESC), KC_MUTE, KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_MINUS, KC_EQUAL, KC_LBRACKET, KC_RBRACKET, KC_TRNS, KC_TRNS,
+    KC_TILD, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL, KC_TRNS, KC_TRNS,
+    LCTL_T(KC_ESC), KC_MUTE, KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_MINUS, KC_EQUAL, KC_LBRACKET, KC_RBRACKET, KC_PIPE, KC_TRNS,
     KC_LSFT, KC_MPRV, KC_MPLY, KC_MNXT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BSLASH, KC_SFTENT,
     KC_LCTL, LALT_T(KC_LGUI), MO(1), LT(3,KC_SPC), MO(2), MO(1), LT(4, KC_RGUI), KC_RCTL
   ),
+ 
 
   /* Upper
    * ,-----------------------------------------------------------------------------------------.
    * |     |     |     |     |     |     |     |     |     |     |     |     |     |           |
    * |-----------------------------------------------------------------------------------------+
-   * |  Tab   | F1  | F2  | F3  | F4  |     |Home |PgDn |PgUp |End  |PrtSc|  BSPC  |    |      |
+   * |  Tab   | F1  | F2  | F3  | F4  |     |PgUp |Home |Up |End  |PrtSc|  BSPC  |    |      |
    * |-----------------------------------------------------------------------------------------+
-   * |   EscC   | F5  | F6  | F7  | F8  |     |Left |Down | Up  |Right|     |     |            |
+   * |   EscC   | F5  | F6  | F7  | F8  |     |PgDn |Left | Down  |Right|     |     |            |
    * |-----------------------------------------------------------------------------------------+
    * |   Shift   | F9  | F10 | F11 | F12 |     |     |     |     |     |     |      EntS       |
    * |-----------------------------------------------------------------------------------------+
@@ -74,8 +75,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [2] = LAYOUT_60_ansi(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TAB, KC_F1, KC_F2, KC_F3, KC_F4, KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_PSCR, KC_BSPC, KC_TRNS, KC_TRNS,
-    LCTL_T(KC_ESC), KC_F5, KC_F6, KC_F7, KC_F8, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TAB, KC_F1, KC_F2, KC_F3, KC_F4, KC_TRNS, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_PSCR, KC_BSPC, KC_TRNS, KC_TRNS,
+    LCTL_T(KC_ESC), KC_F5, KC_F6, KC_F7, KC_F8, KC_TRNS, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_LSFT, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SFTENT,
     KC_LCTL, LALT_T(KC_LGUI), MO(1), LT(3,KC_SPC), MO(2), MO(1), LT(4, KC_RGUI), KC_RCTL
   ),
@@ -84,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------------------------------------.
    * |     |     |     |     |     |     |     |     |     |     |     |     |     |           |
    * |-----------------------------------------------------------------------------------------+
-   * |  Tab   | 1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |BSPC|        |       |
+   * |   ~    |  !  |  @  |  #  |  $  |  %  |  ^  |  &  |  *  |  (  |  ) |BSPC|        |       |
    * |-----------------------------------------------------------------------------------------+
-   * |   EscC   |     |     |     |     |     |     |  _  |  +  |  {  |  }  | FREE  |          |
+   * |   EscC   |     |     |     |     |     |     |  _  |  +  |  {  |  }  | PIPE  |          |
    * |-----------------------------------------------------------------------------------------+
    * |   Shift   |     |     |     |     |     |     |     |     |     |     |      EntS       |
    * |-----------------------------------------------------------------------------------------+
@@ -95,8 +96,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [3] = LAYOUT_60_ansi(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TAB, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC, KC_TRNS, KC_TRNS,
-    LCTL_T(KC_ESC), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS,
+    KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC, KC_TRNS, KC_TRNS,
+    LCTL_T(KC_ESC), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TRNS,
     KC_LSFT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SFTENT,
     KC_LCTL, LALT_T(KC_LGUI), MO(1), LT(3,KC_SPC), MO(2), MO(1), LT(4, KC_RGUI), KC_RCTL
   ),
