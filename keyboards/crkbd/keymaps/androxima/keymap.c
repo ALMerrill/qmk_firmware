@@ -13,7 +13,6 @@ enum layer_names { _QWERTY, _LOWER, _RAISE, _ADJUST, _LOL, _LOL_2 };
 #define COMM KC_COMM
 #define ESCC LCTL_T(KC_ESC)
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_QWERTY] = LAYOUT(
 		KC_TAB, KC_Q, 	KC_W, 	KC_E, 	KC_R, 	KC_T, 			KC_Y, 	KC_U, 	KC_I, 	KC_O, 	KC_P, 		KC_BSPC, 
