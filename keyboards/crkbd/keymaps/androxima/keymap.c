@@ -15,6 +15,7 @@ enum layer_names { _QWERTY, _LOWER, _RAISE, _ADJUST, _LOL, _LOL_F, _LOL_TYPE, _L
 #define ESCC LCTL_T(KC_ESC)
 
 
+
 #define LOL TO(_LOL)
 #define LOL_F LT(_LOL_F,KC_SPC)
 #define _TYPE TO(_LOL_TYPE)
