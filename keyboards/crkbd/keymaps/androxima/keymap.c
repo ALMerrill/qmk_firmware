@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-enum layer_names { _QWERTY, _DVORAK, _LOWER, _RAISE, _ADJUST, _NUMBER, _LOL, _LOL_F, _LOL_TYPE, _LOL_TYPE_2 };
+enum layer_names { _QWERTY, _DVORAK, _LOWER, _RAISE, _ADJUST, _NUMBER, _LOL, _LOL_F};
 
 #define QWERTY TO(_QWERTY)
 #define DVORAK TO(_DVORAK)
@@ -23,8 +23,6 @@ enum layer_names { _QWERTY, _DVORAK, _LOWER, _RAISE, _ADJUST, _NUMBER, _LOL, _LO
 
 #define LOL TO(_LOL)
 #define LOL_F LT(_LOL_F,KC_SPC)
-#define _TYPE TO(_LOL_TYPE)
-#define _TYPE_2 MO(_LOL_TYPE_2)
 
 #define CCTL LCTL_T(KC_C)
 #define VALT LALT_T(KC_V)
@@ -35,7 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TAB, KC_Q, 	KC_W, 	KC_E, 	KC_R, 	KC_T, 			KC_Y, 	KC_U, 	KC_I, 	KC_O, 	KC_P, 		KC_BSPC, 
 		ESCC, 	KC_A, 	KC_S, 	KC_D, 	KC_F, 	KC_G, 			KC_H, 	KC_J, 	KC_K, 	KC_L, 	KC_SCLN, 	KC_QUOT, 
 		_LSFT, 	KC_Z, 	KC_X, 	KC_C, 	KC_V, 	KC_B, 			KC_N, 	KC_M, 	COMM, 	KC_DOT, KC_SLSH, 	SFTENT, 
-									GUIC, 	LOWER, KC_LSFT, BSPC_A,  RASPC,  NUMBER
+                                    A
+									KC_LGUI, 	LOWER, KC_LSFT, BSPC_A,  RASPC,  NUMBER
 	),
 	[_DVORAK] = LAYOUT(
 		KC_TAB, COMM,	DOT, 	KC_SLSH,KC_P, 	KC_Y, 			KC_F, 	KC_G, 	KC_C, 	KC_R, 	KC_L, 		KC_BSPC, 
@@ -44,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 									GUIC, 	LOWER, KC_LSFT, BSPC_A,  RASPC,  NUMBER
 	),
 	[_LOWER] = LAYOUT(
-		KC_TILD, KC_NO, KC_7, 	KC_8, 	KC_9, 	KC_0, 		KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL, 
-		KC_LCTL, KC_NO, KC_4, 	KC_5, 	KC_6, 	KC_NO, 			KC_UNDS, KC_PLUS, KC_EQL, KC_LCBR, KC_RCBR, KC_PIPE, 
-		_LSFT, 	 KC_0, 	KC_1, 	KC_2, 	KC_3, 	KC_L, 				KC_NO, KC_MINS, KC_UNDS, KC_LBRC, KC_RBRC, SFTENT, 
+		KC_TILD, KC_NO, KC_7, 	KC_8, 	KC_9, 	KC_0, 		    KC_CIRC,    KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL, 
+		KC_LCTL, KC_NO, KC_4, 	KC_5, 	KC_6, 	KC_NO, 			KC_NO,    KC_PLUS, KC_EQL, KC_LCBR, KC_RCBR, KC_PIPE, 
+		_LSFT, 	 KC_0, 	KC_1, 	KC_2, 	KC_3, 	KC_L, 			KC_NO,      KC_MINS, KC_UNDS, KC_LBRC, KC_RBRC, SFTENT, 
 									KC_LGUI, KC_TRNS, KC_LSFT, BSPC_A, ADJUST, NUMBER
 	),
 	[_RAISE] = LAYOUT(
@@ -69,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 	[_LOL] = LAYOUT(
 		KC_ESC, KC_1, KC_2, KC_3, 	KC_4,	KC_5, 				KC_Y, KC_NO, KC_NO, KC_NO, KC_P, QWERTY, 
-		KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, 					KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, _TYPE, 
+		KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, 					KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 		_LSFT, 	KC_A, KC_S, KC_D, KC_F, KC_G, 					KC_B, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 									KC_LCTL, LOL_F, VALT, 	KC_NO, KC_NO, KC_NO
 	),
@@ -78,17 +77,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO, 				KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 		KC_NO, KC_NO, KC_NO, KC_NO, KC_B, KC_B, 				KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 									KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
-	),
-	[_LOL_TYPE] = LAYOUT(
-		KC_TAB, KC_Q, 	KC_W, 	KC_E, 	KC_R, 	KC_T, 			KC_Y, 	KC_U, 	KC_I, 	KC_O, 	KC_P, 		KC_BSPC, 
-		ESCC, 	KC_A, 	KC_S, 	KC_D, 	KC_F, 	KC_G, 			KC_H, 	KC_J, 	KC_K, 	KC_L, 	KC_SCLN, 	KC_TRNS, 
-		_LSFT, 	KC_Z, 	KC_X, 	KC_C, 	KC_V, 	KC_B, 			KC_N, 	KC_M, 	COMM, 	KC_DOT, KC_SLSH, 	SFTENT, 
-									GUIC, 	KC_NO, SFTENT, 	KC_SPC, KC_NO, 	LOL
-	),
-	[_LOL_TYPE_2] = LAYOUT(
-		KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 				KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
-		KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 				KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, LOL, 
-		KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 				KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
-									KC_NO, KC_NO, KC_NO, 	KC_NO, KC_TRNS, KC_NO
 	),
 };
