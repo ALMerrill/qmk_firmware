@@ -69,20 +69,18 @@ void encoder_update_user(uint8_t index, bool clockwise) {
             tap_code(KC_VOLD);
         }
     }
-    else if (index == _MIDDLE) {
-        if (clockwise) {
-            tap_code(KC_A);
-        } else {
-            tap_code(KC_B);
-        }
-    }
+    //else if (index == _MIDDLE) {
+    //    if (clockwise) {
+    //        tap_code(KC_A);
+    //    } else {
+    //        tap_code(KC_B);
+    //    }
+    //}
     else if (index == _RIGHT) {
         if (clockwise) {
-           // SEND_STRING(SS_LGUI(SS_LSFT("z")));
-           tap_code16(SS_LGUI(SS_LSFT("z")));
+            tap_code16(SS_LCTL(KC_TAB))
         } else {
-           // SEND_STRING(SS_LGUI("z"));
-           tap_code16(SS_LGUI("z"));
+            tap_code16(SS_LCTL(SS_LSFT(KC_TAB)))
         }
     }
 }
