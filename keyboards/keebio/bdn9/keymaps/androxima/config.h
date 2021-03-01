@@ -6,6 +6,6 @@
 
 #define TAP_CODE_DELAY 10
 
-#define ENCODERS_PAD_A { D1, F5 }
-#define ENCODERS_PAD_B { D0, F6 }
+//#define ENCODERS_PAD_A { D1, F5 }
+//#define ENCODERS_PAD_B { D0, F6 }
 
